@@ -35,41 +35,43 @@ html{
     margin: 1%; 
     width: 110%;
     display: flex; 
+    flex-direction: column;
     justify-content: space-between; 
     border-top: 0.05em solid #fff;    
+}
+.text{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 .accordion input{
     display: none;
 }
-.accordion input:hover + label + .acor_body {
-    height: 18em;
-    width: 18em;
-    margin-top: -2%;    
-    padding: 3%;
+.text:hover ~ .acor_body {
+    height: 10em;
+    width: 10em;    
 }
 .acor_body:hover{
-    height: 18em;
-    width: 18em;
-    margin-top: -2%;    
-    padding: 3%;
+    height: 10em;
+    width: 10em;    
 }
 /* стрелочка*/
-.accordion label:after {
+.text:after {
     content: '\276F';
     float: right;
-    opacity: 0;
+    opacity: 0%;
 }
-.wrepper:hover label:after{
+.wrepper:hover .text:after{
     opacity: 100%;
 }
-.accordion input:hover + label:after {
+.accordion input + label:hover .text:after {
     transition: transform .35s;
     transform: rotate(90deg);
 }
-.mem_1:hover ~ label:after {
-    transition: transform .35s;
-    transform: rotate(90deg);
-}
+.accordion input[type="radio"]:checked+label>.acor_body {
+    height: 10em;
+    width: 10em;  
+  }
 /*картинки*/
 .mem_1{       
     background: url(./pic/1.jpg);
@@ -94,11 +96,4 @@ html{
     background-position: center;
     background-size: 100% auto; 
     background-repeat: no-repeat;
-}
-/* аккордион нажатие*/
-.accordion input:checked + label + .acor_body {
-    height: 18em;
-    width: 18em;
-    margin-top: -2%;    
-    padding: 3%;
 }

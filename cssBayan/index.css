@@ -1,0 +1,126 @@
+html{    
+    background-color: #808080; 
+    display: flex;
+    justify-content: center; 
+    overflow-x: hidden;   
+}
+.wrepper{    
+    cursor: pointer;
+    padding: 2%;      
+}
+.title_bayan{
+    font-size: 2rem;    
+    font-weight: bold;    
+}
+
+.accordion {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 2% 0 0 0;
+    
+}
+.accordion .acor_body {
+    margin: 0 auto;
+    height: 0;    
+    box-sizing: border-box;
+    transition: 0.5s;
+    overflow: hidden;    
+}
+.accordion label {
+    cursor: pointer;    
+    padding: 0.3% 0;
+    width: max-content;       
+    box-sizing: border-box;
+    z-index: 100;      
+    font-size: 1.5rem;     
+    width: 110%;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between; 
+    border-top: 0.05em solid #fff; 
+    background-color:#708090; 
+    border-radius: 0.2em;  
+}
+.text{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: blue;
+    background-color: #5F9EA0;
+    padding: 1% 2%;
+}
+.accordion input{
+    display: none;
+}
+/* акоордион наведение*/
+.wrepper:hover .text{
+    color: black;
+}
+.accordion input[type="radio"]:hover+label>.acor_body {
+    height: 10em;
+    width: 10em;  
+  }
+.text:hover ~ .acor_body {
+    height: 10em;
+    width: 10em;    
+}
+.acor_body:hover{
+    height: 10em;
+    width: 10em;    
+}
+/* стрелочка*/
+.text:after {
+    content: '\276F';
+    float: right;
+    opacity: 0%;
+}
+.wrepper:hover .text:after{
+    opacity: 100%;
+}
+.accordion input + label:hover .text:after {
+    transition: transform .35s;
+    transform: rotate(90deg);
+}
+/* стрелочка*/
+/* аккордион нажатие*/
+
+.accordion input[type="radio"]:checked+label>.acor_body {
+    height: 10em;
+    width: 10em;  
+  }
+.accordion input[type="radio"]:checked+label>.text {
+    color: black; 
+}
+/* аккордион нажатие*/
+/*эффекты*/
+.accordion label:active{
+    transition: 0.2s;
+    opacity: 50%;
+    cursor: cell;
+}
+/*картинки*/
+.mem_1{       
+    background: url(./pic/1.jpg);
+    background-position: center;
+    background-size:   100% auto;
+    background-repeat: no-repeat;
+}
+.mem_2{
+    background: url(./pic/2.jpg);
+    background-position: center;
+    background-size: 100% auto; 
+    background-repeat: no-repeat;
+}
+.mem_3{    
+    background: url(./pic/3.png);
+    background-position: center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+}
+.mem_4{   
+    background: url(./pic/4.png);
+    background-position: center;
+    background-size: 100% auto; 
+    background-repeat: no-repeat;
+}

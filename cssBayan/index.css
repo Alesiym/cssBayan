@@ -5,13 +5,14 @@ html{
     overflow-x: hidden;   
 }
 .wrepper{
-    cursor: pointer;    
+    cursor: pointer;
+    padding: 2%;    
 }
 .title_bayan{
     font-size: 2rem;    
     font-weight: bold;    
 }
-/* акоордион наведение*/
+
 .accordion {
     display: flex;
     justify-content: space-between;
@@ -43,10 +44,19 @@ html{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    color: blue;
 }
 .accordion input{
     display: none;
 }
+/* акоордион наведение*/
+.wrepper:hover .text{
+    color: black;
+}
+.accordion input[type="radio"]:hover+label>.acor_body {
+    height: 10em;
+    width: 10em;  
+  }
 .text:hover ~ .acor_body {
     height: 10em;
     width: 10em;    
@@ -68,10 +78,23 @@ html{
     transition: transform .35s;
     transform: rotate(90deg);
 }
+/* стрелочка*/
+/* аккордион нажатие*/
+
 .accordion input[type="radio"]:checked+label>.acor_body {
     height: 10em;
     width: 10em;  
   }
+.accordion input[type="radio"]:checked+label>.text {
+    color: black; 
+}
+/* аккордион нажатие*/
+/*эффекты*/
+.accordion label:active{
+    transition: 0.2s;
+    opacity: 50%;
+    cursor: cell;
+}
 /*картинки*/
 .mem_1{       
     background: url(./pic/1.jpg);
